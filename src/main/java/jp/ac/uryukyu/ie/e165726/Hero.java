@@ -17,7 +17,7 @@ public class Hero extends LivingThing{
                 System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n",getName(), opponent.getName());
             }else{
                 if(criticalProbability <= 30){
-                    System.out.printf("%sの攻撃！痛恨の一撃！！%sに%dのダメージを与えた！！\n",getName(), opponent.getName(), damage * 2);
+                    System.out.printf("%sの攻撃！会心の一撃！！%sに%dのダメージを与えた！！\n",getName(), opponent.getName(), damage * 2);
                     damage = damage * 2;
                 }else {
                     System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", getName(), opponent.getName(), damage);
