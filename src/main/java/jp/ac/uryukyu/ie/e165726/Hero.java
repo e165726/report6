@@ -12,7 +12,7 @@ public class Hero extends LivingThing{
         int criticalProbability;
         if(isDead() == false) {
             criticalProbability = (int)(Math.random()*100) + 1;
-            damage = (int) (Math.random() * getAttack()+1);
+            damage = (int) (Math.random() * (getAttack()+1));
             if(damage == 0){
                 System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n",getName(), opponent.getName());
             }else{
