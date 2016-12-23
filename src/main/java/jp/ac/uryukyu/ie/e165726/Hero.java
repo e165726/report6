@@ -15,4 +15,25 @@ public class Hero extends LivingThing{
         }
     }
 
+    public void attack(LivingThing opponent){
+        int damage;
+        int criticalProbability;
+        if(isDead() == false) {
+            criticalProbability = (int)(Math.random()*100) + 1;
+            damage = (int) (Math.random() * getAttack());
+            if(damage == 0){
+                System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n",getName(), opponent.getName());
+            }else{
+                if(criticalProbability <= 20){
+                    System.out.printf("%sの攻撃！痛恨の一撃！！%sに%dのダメージを与えた！！\n",getName(), opponent.getName(), damage * 2);
+                }else {
+                    System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", getName(), opponent.getName(), damage);
+                }
+            }
+        }else{
+            damage = 0;
+        }
+        opponent.wounded(damage);
+    }
+
 }
