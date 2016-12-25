@@ -7,8 +7,7 @@ public class Enemy extends LivingThing{
 
     @Override
     public void attack(LivingThing opponent){
-        int damage;
-        int criticalProbability;
+        int damage,criticalProbability;
         if(isDead() == false) {
             criticalProbability = (int)(Math.random()*100) + 1;;
             damage = (int) (Math.random() * (getAttack()+1));
